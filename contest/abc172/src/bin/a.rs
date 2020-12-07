@@ -1,20 +1,18 @@
 #[allow(unused_imports)]
 use proconio::{
-    input, fastout
+    input, fastout,
 };
 
-fn solve(n: i32, a: i32, b: i32) -> i32 {
-
-    n - a + b
+fn solve(a: usize) -> usize {
+    a + a.pow(2) + a.pow(3)
 }
 
 fn run() -> Result<(), Box<dyn std::error::Error>> {
-
     input! {
-        n: i32, a: i32, b: i32,
+        a: usize,
     }
 
-    println!("{}", solve(n, a, b));
+    println!("{}", solve(a));
 
     Ok(())
 }
@@ -22,6 +20,6 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
 fn main() {
     match run() {
         Err(err) => panic!("{}", err),
-        _ => ()
+        _ => (),
     };
 }
